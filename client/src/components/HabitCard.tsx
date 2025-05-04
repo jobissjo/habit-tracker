@@ -41,7 +41,7 @@ const HabitCard: React.FC<HabitCardProps> = ({ habit }) => {
   };
 
   const handleSaveNote = async () => {
-    if (noteContent.trim() && todayCompletion) {
+    if (noteContent.trim() && todayCompletion && typeof todayCompletion.id === 'number') {
       await addNote({
         completionId: todayCompletion.id,
         content: noteContent.trim()
@@ -136,7 +136,7 @@ const HabitCard: React.FC<HabitCardProps> = ({ habit }) => {
               {todayCompletion && todayCompletion.notes && todayCompletion.notes.length > 0 && (
                 <div className="mb-2 pb-2 border-b border-gray-200">
                   {todayCompletion.notes.map(note => (
-                    <div key={note.id} className="flex justify-between items-start">
+                    <div key={typeof note.id === 'number' ? note.id : `note-${Math.random()}`} className="flex justify-between items-start">
                       <p className="text-sm text-gray-700">{note.content}</p>
                       <span className="text-xs text-gray-500">
                         {format(new Date(note.createdAt), 'h:mm a')}
