@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { format, subDays, isAfter, isBefore, parseISO } from 'date-fns';
-import { useHabit } from '@/context/HabitContext';
+import { useStaticHabit } from '@/context/StaticHabitContext';
 import { 
   Dialog, 
   DialogContent, 
@@ -26,7 +26,7 @@ interface UsePointsModalProps {
 }
 
 const UsePointsModal: React.FC<UsePointsModalProps> = ({ isOpen, onClose }) => {
-  const { user, habits, usePoints } = useHabit();
+  const { user, habits, usePoints } = useStaticHabit();
   const [selectedHabitId, setSelectedHabitId] = useState<number | null>(null);
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(subDays(new Date(), 1));
   

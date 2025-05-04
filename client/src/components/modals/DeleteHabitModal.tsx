@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHabit } from '@/context/HabitContext';
+import { useStaticHabit } from '@/context/StaticHabitContext';
 import { 
   AlertDialog,
   AlertDialogAction,
@@ -19,7 +19,7 @@ interface DeleteHabitModalProps {
 }
 
 const DeleteHabitModal: React.FC<DeleteHabitModalProps> = ({ habit, isOpen, onClose }) => {
-  const { deleteHabit } = useHabit();
+  const { deleteHabit } = useStaticHabit();
   
   const handleDelete = async () => {
     await deleteHabit(habit.id);

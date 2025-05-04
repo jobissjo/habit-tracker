@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHabit } from '@/context/HabitContext';
+import { useStaticHabit } from '@/context/StaticHabitContext';
 import { 
   Select, 
   SelectContent, 
@@ -16,7 +16,7 @@ const TIMEFRAMES = [
 ];
 
 const CategoryHeader: React.FC = () => {
-  const { categories, selectedCategoryId } = useHabit();
+  const { categories, selectedCategoryId } = useStaticHabit();
   
   const selectedCategory = categories.find(c => c.id === selectedCategoryId);
   

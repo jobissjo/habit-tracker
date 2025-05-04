@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Menu } from 'lucide-react';
-import { useHabit } from '@/context/HabitContext';
+import { useStaticHabit } from '@/context/StaticHabitContext';
 import { useMobile } from '@/hooks/use-mobile';
 import PointSystem from './PointSystem';
 import CategoryList from './CategoryList';

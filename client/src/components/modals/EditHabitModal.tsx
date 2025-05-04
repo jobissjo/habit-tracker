@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useHabit } from '@/context/HabitContext';
+import { useStaticHabit } from '@/context/StaticHabitContext';
 import { 
   Dialog, 
   DialogContent, 
@@ -27,7 +27,7 @@ interface EditHabitModalProps {
 }
 
 const EditHabitModal: React.FC<EditHabitModalProps> = ({ habit, isOpen, onClose }) => {
-  const { categories, updateHabit } = useHabit();
+  const { categories, updateHabit } = useStaticHabit();
   const [formData, setFormData] = useState({
     name: '',
     description: '',

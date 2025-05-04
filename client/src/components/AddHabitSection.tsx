@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHabit } from '@/context/HabitContext';
+import { useStaticHabit } from '@/context/StaticHabitContext';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -7,7 +7,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 
 const AddHabitSection: React.FC = () => {
-  const { selectedCategoryId, createHabit } = useHabit();
+  const { selectedCategoryId, createHabit } = useStaticHabit();
   const [newHabit, setNewHabit] = useState({
     name: '',
     description: '',

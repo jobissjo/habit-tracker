@@ -1,12 +1,12 @@
 import React from 'react';
-import { useHabit } from '@/context/HabitContext';
+import { useStaticHabit } from '@/context/StaticHabitContext';
 import Sidebar from '@/components/Sidebar';
 import CategoryHeader from '@/components/CategoryHeader';
 import AddHabitSection from '@/components/AddHabitSection';
 import HabitCard from '@/components/HabitCard';
 
 const Home: React.FC = () => {
-  const { habits, isLoading } = useHabit();
+  const { habits, isLoading } = useStaticHabit();
   
   return (
     <div className="min-h-screen flex flex-col md:flex-row">

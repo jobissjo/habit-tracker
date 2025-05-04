@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { useHabit } from '@/context/HabitContext';
+import { useStaticHabit } from '@/context/StaticHabitContext';
 import UsePointsModal from './modals/UsePointsModal';
 
 const PointSystem: React.FC = () => {
-  const { user } = useHabit();
+  const { user } = useStaticHabit();
   const [isModalOpen, setIsModalOpen] = useState(false);
   
   // Define max points for progress bar (could be dynamic based on user level)

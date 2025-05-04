@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Clock, DollarSign, Pencil, Trash2 } from 'lucide-react';
-import { useHabit } from '@/context/HabitContext';
+import { useStaticHabit } from '@/context/StaticHabitContext';
 import { format } from 'date-fns';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Card, CardContent } from '@/components/ui/card';
@@ -17,7 +17,7 @@ interface HabitCardProps {
 }
 
 const HabitCard: React.FC<HabitCardProps> = ({ habit }) => {
-  const { completeHabit, addNote } = useHabit();
+  const { completeHabit, addNote } = useStaticHabit();
   const [isNotesVisible, setIsNotesVisible] = useState(false);
   const [noteContent, setNoteContent] = useState('');
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
